@@ -4,13 +4,15 @@ public class celular {
     private Double precio;
     private int cantidad;
     private double descuento;
+    private int descuentoAplicado;
 
-    public celular(String marca, String modelo, Double precio, int cantidad, double descuento) {
+    public celular(String marca, String modelo, Double precio, int cantidad, Double descuento, int descuentoAplicado) {
         this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;
         this.cantidad = cantidad;
         this.descuento = descuento;
+        this.descuentoAplicado = descuentoAplicado;
     }
 
     public String getMarca() {
@@ -51,5 +53,13 @@ public class celular {
 
     public void setDescuento(double descuento) {
         this.descuento = descuento;
+    }
+
+    public int getDescuentoAplicado() {
+        return descuentoAplicado;
+    }
+
+    public void setDescuentoAplicado(int descuentoAplicado) {
+        this.descuentoAplicado = descuentoAplicado;
     }
 }
