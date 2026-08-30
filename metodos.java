@@ -30,6 +30,7 @@ public class metodos {
         System.out.println("Ingrese el porcentaje de descuento: ");
         Double descuento = sc.nextDouble();
         sc.nextLine();
+        boolean modeloEncontrado = false;
         for(int i = 0; i < c.length; i++){
             if(c[i].getModelo().equalsIgnoreCase(modelo)){
                 Double precio = c[i].getPrecio();
@@ -37,7 +38,11 @@ public class metodos {
                 c[i].setPrecio(nuevoPrecio);
                 c[i].setDescuento(descuento);
                 c[i].setDescuentoAplicado(1);
-            }
+                modeloEncontrado = true;
+            }           
+        }
+        if(!modeloEncontrado){
+            System.out.println("No se encontro el modelo");
         }
         return c;
     }
@@ -56,6 +61,7 @@ public class metodos {
         }
     }
     public void mostrarCelularesConDescuento(celular[] c){
+        boolean hayDescuento = false;
         for(int i = 0; i < c.length; i++){
             if(c[i].getDescuentoAplicado() == 1){
                 System.out.println("Marca: " + c[i].getMarca());
@@ -64,7 +70,11 @@ public class metodos {
                 System.out.println("Cantidad: " + c[i].getCantidad());
                 System.out.println("Descuento aplicado: " + c[i].getDescuento() + "%");
                 System.out.println("-----------------------------");
+                hayDescuento = true;
             }
+        }
+        if(!hayDescuento){
+            System.out.println("No hay celulares con descuento");
         }
     }
 }
