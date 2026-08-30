@@ -45,5 +45,6 @@ public class menu {
                     System.out.println("Opcion invalida");
             }
         }while(opcion != 5);
+        sc.close();
     }
 }
